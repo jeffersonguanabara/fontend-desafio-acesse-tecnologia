@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import api from './api.service';
+import { HttpClient } from '@angular/common/http'
 
 import { Processo } from '../model/processo';
 
@@ -9,18 +9,26 @@ import { Processo } from '../model/processo';
 })
 export class ProcessoService {
 
-  private processoURL = "http://localhost:8080/api/";
+  private processoURL = "http://localhost:8080/api/processos";
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
  
-  /* public async getProcessos() : Promise<Processo[]> {
-    const processos = await api.get('/processos')
-      .then(function(response)) {
+  public async getProcessos() {
+    return await this.http.get<Processo[]>(this.processoURL)
+      .toPromise()
+      .then(processos => processos);
+  }
 
-      }
-      .catch(function(error) {
-        
-      })
-  } */
+  public async salvar(processo: Processo): Promise<Processo> {
+    return await this.http.post<Processo>(this.processoURL, processo)
+      .toPromise()
+      .then(processo => processo);
+  }
+
+  // public async pesquisar(filter: Filter): Promisse<Processo> {
+  //   return await this.http.get(this.processoURL, filter)
+  //     .toPromise()
+  //     .then
+  // }
 }
