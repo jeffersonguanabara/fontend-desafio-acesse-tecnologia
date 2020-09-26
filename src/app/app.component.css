@@ -1,0 +1,44 @@
+#content {
+    width: 90vw;
+    max-width: 700px;
+    margin: 5%;
+}
+
+#content h1 {
+    margin-bottom: 20px;
+}
+
+.card fieldset {
+    width: 80vw;
+    padding: 2.4%;
+    color: #404C54;
+}
+
+.card fieldset legend {
+    font: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    
+  }
+
+.card .p-formgroup-inline {
+    display: inline-flex;
+    width: 90%;
+}
+
+.card .p-formgroup-inline .p-field {
+    margin-right: 5%;
+}
+
+.card .p-formgroup-inline input {
+    margin-right: 5px;
+}
+
+h2 {
+    margin: 5% 0;
+}
+
+
+
