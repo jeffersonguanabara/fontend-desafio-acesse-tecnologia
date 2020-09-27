@@ -1,5 +1,5 @@
 import { Data } from '@angular/router';
-import { Timestamp } from 'rxjs';
+
 export interface Processo {
     id?: number
     data_do_processo?: Date;
